@@ -233,7 +233,7 @@
             </div>
 
             <!-- Right Content: Capture Form -->
-            <div class="w-full lg:w-5/12 fade-in" style="transition-delay: 200ms;" id="application-form">
+            <div class="w-full lg:w-5/12 fade-in scroll-mt-24 lg:scroll-mt-32" style="transition-delay: 200ms;" id="application-form">
                 <div
                     class="bg-secondary/90 backdrop-blur-md border border-gray-800 rounded-2xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
                     <!-- Subtle top highlight -->
@@ -343,11 +343,10 @@
                 capaz de guiar cada procedimento com segurança cirúrgica.
             </p>
 
-            <div class="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-xl overflow-hidden video-glow bg-black group cursor-pointer"
-                onclick="playVideo(this)">
+            <div class="relative w-full max-w-sm mx-auto aspect-[9/16] rounded-xl overflow-hidden video-glow bg-black group">
                 <!-- Fake Thumbnail & Play Button Overlay -->
-                <div class="absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300"
-                    id="video-overlay">
+                <div class="absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 cursor-pointer"
+                    id="video-overlay" onclick="playVideo()">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300">
                     </div>
                     <div
@@ -364,7 +363,7 @@
             </div>
 
             <div class="mt-12 flex justify-center fade-in">
-                <a href="#lead-form" class="inline-flex items-center justify-center bg-offwhite hover:bg-white text-grafitte border border-offwhite font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(237,230,225,0.15)] hover:shadow-[0_0_25px_rgba(237,230,225,0.3)]">
+                <a href="#application-form" class="inline-flex items-center justify-center bg-offwhite hover:bg-white text-grafitte border border-offwhite font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(237,230,225,0.15)] hover:shadow-[0_0_25px_rgba(237,230,225,0.3)]">
                     Quero garantir minha vaga
                 </a>
             </div>
@@ -785,7 +784,7 @@
         });
 
         // Video Player Logic
-        function playVideo(container) {
+        function playVideo() {
             const video = document.getElementById('promo-video');
             const overlay = document.getElementById('video-overlay');
 
