@@ -30,10 +30,12 @@
                         primary: '#0A0A0A',      /* Fundo Preto/Chumbo Profundo */
                         secondary: '#1A1A1A',    /* Fundo de Cards/Secundário */
                         gold: {
-                            DEFAULT: '#D4AF37',  /* Dourado/Champagne */
-                            hover: '#F3D573',
-                            dark: '#A68621'
+                            DEFAULT: '#CEB997',  /* Champagne */
+                            hover: '#E2CBA8',
+                            dark: '#A89574'
                         },
+                        offwhite: '#EDE6E1',
+                        grafitte: '#2E2E2D',
                         textmuted: '#A3A3A3'
                     },
                     fontFamily: {
@@ -90,8 +92,8 @@
         .premium-input {
             width: 100%;
             background-color: transparent;
-            border-bottom: 1px solid #333;
-            color: #FFFFFF;
+            border-bottom: 1px solid #555;
+            color: #EDE6E1;
             padding: 0.5rem 0;
             font-size: 0.9rem;
             font-family: 'Montserrat', sans-serif;
@@ -100,12 +102,12 @@
 
         .premium-input:focus {
             outline: none;
-            border-bottom-color: var(--accent-gold);
-            box-shadow: 0 1px 0 0 var(--accent-gold);
+            border-bottom-color: #CEB997;
+            box-shadow: 0 1px 0 0 #CEB997;
         }
 
         .premium-input::placeholder {
-            color: #666;
+            color: rgba(237, 230, 225, 0.5);
             font-weight: 300;
         }
 
@@ -199,7 +201,7 @@
     </style>
 </head>
 
-<body class="font-sans antialiased text-white selection:bg-gold selection:text-black">
+<body class="font-sans antialiased text-offwhite selection:bg-gold selection:text-black">
 
     <!-- Logo Header -->
     <header class="absolute top-0 left-0 w-full z-50 pt-3 pb-0 lg:py-6">
@@ -209,26 +211,24 @@
     </header>
 
     <section
-        class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed pt-24 pb-16 lg:pt-40 lg:pb-12">
+        class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-[position:15%_center] lg:bg-center bg-no-repeat bg-fixed pt-24 pb-16 lg:pt-40 lg:pb-12">
         <div
             class="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
             <!-- Left Content: Copy -->
             <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left space-y-8 lg:space-y-6 fade-in">
                 <div
-                    class="inline-flex items-center space-x-3 border border-gold/30 rounded-full px-5 py-2 w-max bg-black/40 backdrop-blur-sm">
+                    class="inline-flex items-center space-x-3 border border-gold/40 rounded-full px-5 py-2 w-max bg-black/40 backdrop-blur-sm">
                     <img src="./icone-mentoria.svg" alt="Ícone Mentoria" class="w-5 h-5 object-contain">
-                    <span class="text-xs font-semibold tracking-widest text-gold uppercase">Mentoria Premium • Vagas
-                        Selecionadas</span>
+                    <span class="text-sm font-medium tracking-wide text-offwhite">Eleve sua prática clínica a outro nível.</span>
                 </div>
 
-                <h1 class="font-sans text-4xl lg:text-5xl xl:text-6xl leading-tight font-medium">
-                    O domínio absoluto do <span class="text-gradient-gold italic">raciocínio clínico</span> anatômico.
+                <h1 class="font-sans text-4xl lg:text-5xl xl:text-6xl leading-tight font-medium text-offwhite">
+                    O domínio absoluto do raciocínio clínico anatômico
                 </h1>
 
-                <p class="text-textmuted text-lg lg:text-xl font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Eleve seu padrão clínico. Abandone os protocolos engessados e descubra como aplicar a anatomia
-                    tridimensional para entregar resultados com extrema naturalidade e segurança inquestionável.
+                <p class="text-offwhite/80 text-lg lg:text-xl font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Aprenda a interpretar a face em profundidade, compreender estruturas anatômicas críticas e tomar decisões clínicas com mais segurança, previsibilidade e naturalidade.
                 </p>
             </div>
 
@@ -241,9 +241,9 @@
                         class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent">
                     </div>
 
-                    <h3 class="font-sans text-2xl font-medium mb-1 text-center">Aplicação para a Mentoria</h3>
-                    <p class="text-sm text-textmuted text-center mb-6 font-light">
-                        O Anatomy Master Face é um ambiente exclusivo. Envie seus dados para avaliação.
+                    <h3 class="font-sans text-xl lg:text-2xl font-medium mb-2 text-center text-offwhite">Garanta acesso antecipado ao Anatomy Master Face</h3>
+                    <p class="text-sm text-offwhite/70 text-center mb-6 font-light">
+                        Entre na lista de pré-venda e receba a condição especial de lançamento.
                     </p>
 
                     <form id="lead-form" class="space-y-4">
@@ -258,8 +258,8 @@
 
 
                         <button type="submit" id="submit-btn"
-                            class="w-full bg-gold hover:bg-gold-hover text-black font-semibold uppercase tracking-wider py-3 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] mt-2 flex items-center justify-center">
-                            <span>Enviar minha aplicação</span>
+                            class="w-full bg-offwhite hover:bg-white text-grafitte border border-offwhite font-bold uppercase tracking-wider py-3.5 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(237,230,225,0.15)] hover:shadow-[0_0_25px_rgba(237,230,225,0.3)] mt-4 flex items-center justify-center">
+                            <span>Quero garantir minha vaga</span>
                         </button>
                     </form>
 
