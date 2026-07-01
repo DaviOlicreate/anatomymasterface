@@ -743,58 +743,6 @@
             chevron.classList.toggle('rotated');
         }
 
-        // WhatsApp Mask Logic
-        document.getElementById('whatsapp').addEventListener('input', function (e) {
-            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
-            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-        });
-
-        // Form Submission Logic
-        document.getElementById('lead-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const form = this;
-            const btn = document.getElementById('submit-btn');
-            const btnText = btn.querySelector('span');
-            const successMsg = document.getElementById('form-success-msg');
-            const errorMsg = document.getElementById('form-error-msg');
-
-            // Reset messages
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
-
-            // State: Loading
-            btn.disabled = true;
-            btnText.textContent = 'Enviando...';
-            form.style.opacity = '0.7';
-
-            const formData = new FormData(form);
-            const data = new URLSearchParams(formData);
-
-            fetch('https://script.google.com/macros/s/AKfycbxKIuhn_3xsiLTw-IWuC47pRFf2q0maDpZBfv5nOtlLtPXb4vm2vXHs8-PT5aZ7JrNg/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: data
-            })
-                .then(response => {
-                    form.style.opacity = '1';
-                    btn.disabled = false;
-                    btnText.textContent = 'Enviar minha aplicação';
-                    form.reset();
-                    form.style.display = 'none';
-                    successMsg.classList.remove('hidden');
-                    successMsg.classList.add('flex');
-                    lucide.createIcons();
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    form.style.opacity = '1';
-                    btn.disabled = false;
-                    btnText.textContent = 'Enviar minha aplicação';
-                    errorMsg.classList.remove('hidden');
-                });
-        });
-
         // Video Player Logic
         function playVideo() {
             const video = document.getElementById('promo-video');
