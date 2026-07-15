@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomy Master Face | Curso Premium com Dr. Luccas Lenine</title>
-
-    <!-- Preload Hero Image for LCP Optimization -->
-    <link rel="preload" as="image" href="./hero-optimized.jpg">
+    <title>Anatomy Master Face | Mentoria Premium com Dr. Luccas Lenine</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./icone-mentoria.svg">
@@ -24,24 +21,6 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1747330453305002');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1747330453305002&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 
     <script>
         tailwind.config = {
@@ -64,7 +43,7 @@
                         sans: ['"Montserrat"', 'sans-serif'],
                     },
                     backgroundImage: {
-                        'hero-pattern': "linear-gradient(to right, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url('./hero-optimized.jpg')",
+                        'hero-pattern': "linear-gradient(to right, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url('./capa.svg')",
                     }
                 }
             }
@@ -103,7 +82,10 @@
 
         /* Gold Gradient Text Utility */
         .text-gradient-gold {
-            color: #BE8C56;
+            background: linear-gradient(to right, #D4AF37, #F3D573, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* Input fields premium styling */
@@ -237,6 +219,7 @@
             <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left space-y-8 lg:space-y-6 fade-in">
                 <div
                     class="inline-flex items-center space-x-3 border border-gold/40 rounded-full px-5 py-2 w-max bg-black/40 backdrop-blur-sm">
+                    <img src="./icone-mentoria.svg" alt="Ícone Mentoria" class="w-5 h-5 object-contain">
                     <span class="text-sm font-medium tracking-wide text-offwhite">Eleve sua prática clínica a outro nível.</span>
                 </div>
 
@@ -253,23 +236,60 @@
                 </p>
             </div>
 
-            <!-- Right Content: Checkout CTA -->
-            <div class="w-full lg:w-5/12 fade-in scroll-mt-24 lg:scroll-mt-32" style="transition-delay: 200ms;" id="checkout-cta">
-                <div class="bg-secondary/90 backdrop-blur-md border border-gray-800 rounded-2xl p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center text-center">
+            <!-- Right Content: Capture Form -->
+            <div class="w-full lg:w-5/12 fade-in scroll-mt-24 lg:scroll-mt-32" style="transition-delay: 200ms;" id="application-form">
+                <div
+                    class="bg-secondary/90 backdrop-blur-md border border-gray-800 rounded-2xl p-6 lg:p-8 shadow-2xl relative overflow-hidden">
                     <!-- Subtle top highlight -->
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-
-                    <h3 class="font-sans text-2xl lg:text-3xl font-medium mb-4 text-offwhite">Domine a Anatomia Facial</h3>
-                    <p class="text-offwhite/80 text-lg mb-8 font-light">Garanta sua vaga no Anatomy Master Face com condição especial.</p>
-
-                    <div class="space-y-1 mb-6">
-                        <p class="text-[#BE8C56] font-bold text-4xl sm:text-5xl mb-2">12x de R$ 99,90</p>
-                        <p class="text-sm text-offwhite/80 font-light">ou R$ 1.198,80 à vista</p>
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent">
                     </div>
 
-                    <a href="https://pay.hotmart.com/H106370647K" class="w-full bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-[15px] sm:text-base flex items-center justify-center text-center">
-                        Quero dominar a anatomia agora!
-                    </a>
+                    <h3 class="font-sans text-xl lg:text-2xl font-medium mb-2 text-center text-offwhite">Garanta acesso antecipado ao Anatomy Master Face</h3>
+                    <p class="text-sm text-offwhite/70 text-center mb-6 font-light">
+                        Entre na lista de pré-venda e receba a condição especial de lançamento.
+                    </p>
+
+                    <form id="lead-form" class="space-y-4">
+                        <div>
+                            <input type="text" id="name" name="nome" placeholder="Nome Completo" required
+                                class="premium-input">
+                        </div>
+                        <div>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp (com DDD)" required
+                                class="premium-input" maxlength="15" minlength="15" pattern="\(\d{2}\)\s\d{5}-\d{4}" title="Digite um número de WhatsApp válido contendo DDD e 9 dígitos.">
+                        </div>
+
+
+                        <button type="submit" id="submit-btn"
+                            class="w-full bg-offwhite hover:bg-white text-grafitte border border-offwhite font-bold uppercase tracking-wider py-3.5 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(237,230,225,0.15)] hover:shadow-[0_0_25px_rgba(237,230,225,0.3)] mt-4 flex items-center justify-center">
+                            <span>Quero garantir minha vaga</span>
+                        </button>
+                    </form>
+
+                    <div id="form-success-msg"
+                        class="hidden flex-col items-center justify-center mt-6 p-6 border border-gold/30 rounded-xl bg-gold/5 text-center fade-in">
+                        <div class="w-14 h-14 bg-gold/20 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="check" class="w-7 h-7 text-gold"></i>
+                        </div>
+                        <h4 class="text-gold text-xl font-medium mb-2">Aplicação enviada!</h4>
+                        <p class="text-gray-300 text-sm mb-8 font-light">
+                            Nossa equipe avaliará seu perfil em breve. Enquanto aguarda o retorno, toque no botão abaixo para garantir sua vaga no grupo VIP do WhatsApp.
+                        </p>
+                        
+                        <a href="https://chat.whatsapp.com/LdTPCRoSCizIwGU6PPVL1F" target="_blank" rel="noopener noreferrer"
+                            class="w-full border border-gold text-gold hover:bg-gold hover:text-black font-semibold uppercase tracking-wider py-3.5 px-4 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] flex items-center justify-center space-x-3 text-center sm:text-left">
+                            <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            <span class="text-[15px] sm:text-base">Entrar para o grupo</span>
+                        </a>
+                    </div>
+
+                    <div id="form-error-msg"
+                        class="hidden text-center mt-6 p-4 border border-red-500/50 rounded bg-red-500/10 text-red-500 text-sm">
+                        Ocorreu um erro ao enviar. Tente novamente mais tarde.
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,57 +331,7 @@
                             <span>Quer evoluir tecnicamente sem depender de mapas prontos</span>
                         </li>
                     </ul>
-                    <div class="mt-10 lg:mt-12 flex justify-center lg:justify-start">
-                        <a href="https://pay.hotmart.com/H106370647K" class="w-full md:w-auto inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-center">
-                            COMPRAR AGORA
-                        </a>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- New Section: Dores (O Real Problema) -->
-    <section class="bg-[#F9F9F9] py-20 lg:py-24 border-t border-gray-200">
-        <div class="container mx-auto px-6 lg:px-12 text-center max-w-6xl fade-in">
-            <h4 class="text-gray-500 uppercase tracking-widest text-xs sm:text-sm font-medium mb-4">O real problema</h4>
-            <h2 class="font-sans text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-gray-900 leading-tight max-w-4xl mx-auto">
-                Conhecer técnicas é básico.
-            </h2>
-            <p class="text-gray-600 text-lg lg:text-xl font-light leading-relaxed mb-16 max-w-3xl mx-auto">
-                Entender a variação anatômica e personalizar cada tratamento é o que diferencia um profissional premium.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left mb-16">
-                <!-- Card 1 -->
-                <div class="bg-[#BE8C56] p-8 lg:p-10 rounded-xl shadow-md flex flex-col items-start transform hover:-translate-y-2 transition-transform duration-300">
-                    <p class="text-white text-base lg:text-lg font-medium leading-relaxed">
-                        Você hesita antes de certos procedimentos porque não tem certeza absoluta sobre os planos anatômicos daquela região.
-                    </p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="bg-[#BE8C56] p-8 lg:p-10 rounded-xl shadow-md flex flex-col items-start transform hover:-translate-y-2 transition-transform duration-300">
-                    <p class="text-white text-base lg:text-lg font-medium leading-relaxed">
-                        Já precisou lidar com intercorrências ou retrabalho que, com mais domínio anatômico, poderiam ter sido evitados.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-[#BE8C56] p-8 lg:p-10 rounded-xl shadow-md flex flex-col items-start transform hover:-translate-y-2 transition-transform duration-300">
-                    <p class="text-white text-base lg:text-lg font-medium leading-relaxed">
-                        Estudou anatomia em livros com ilustrações que não se traduzem para a realidade do paciente na cadeira.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center pt-4">
-                <h3 class="text-xl lg:text-2xl font-medium text-gray-900 mb-8">
-                    E a solução é o <span class="font-bold">Anatomy Master Face!</span>
-                </h3>
-                <a href="https://pay.hotmart.com/H106370647K" class="inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 px-12 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-base sm:text-lg text-center">
-                    Quero me inscrever!
-                </a>
             </div>
         </div>
     </section>
@@ -397,8 +367,8 @@
             </div>
 
             <div class="mt-12 flex justify-center fade-in">
-                <a href="https://pay.hotmart.com/H106370647K" class="inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-center">
-                    Quero dominar a anatomia agora!
+                <a href="#application-form" class="inline-flex items-center justify-center bg-offwhite hover:bg-white text-grafitte border border-offwhite font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(237,230,225,0.15)] hover:shadow-[0_0_25px_rgba(237,230,225,0.3)]">
+                    Quero garantir minha vaga
                 </a>
             </div>
         </div>
@@ -406,14 +376,12 @@
 
     <section class="marquee-container border-y border-gold/20">
         <div
-            class="marquee-content text-gold font-medium uppercase tracking-[0.2em] text-sm lg:text-base flex items-center">
-            CURSO AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
+            class="marquee-content text-gold font-bold uppercase tracking-[0.2em] text-sm lg:text-base flex items-center">
+            MENTORIA AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
             NATURAIS • SEGURANÇA ABSOLUTA •
-            CURSO AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
+            MENTORIA AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
             NATURAIS • SEGURANÇA ABSOLUTA •
-            CURSO AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
-            NATURAIS • SEGURANÇA ABSOLUTA •
-            CURSO AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
+            MENTORIA AMF • ALTO NÍVEL TÉCNICO • RACIOCÍNIO ANATÔMICO • EXCLUSIVIDADE • DOMÍNIO CLÍNICO • RESULTADOS
             NATURAIS • SEGURANÇA ABSOLUTA •
         </div>
     </section>
@@ -436,7 +404,8 @@
                     <div>
                         <h2 class="font-sans text-3xl lg:text-4xl font-medium mb-2">Quem guiará você ao topo da sua
                             prática clínica</h2>
-                        <h3 class="text-gold uppercase tracking-widest text-sm font-semibold mb-6">Dr. Luccas Lenine | CROSP 169097</h3>
+                        <h3 class="text-gold uppercase tracking-widest text-sm font-semibold mb-6">Dr. Luccas Lenine —
+                            Criador do AMF Lab</h3>
                     </div>
 
                     <ul class="space-y-4 text-textmuted font-light">
@@ -461,12 +430,11 @@
                             <div class="w-0.5 flex-1 bg-gold rounded-full"></div>
                         </div>
                         <div class="py-1">
-                            <h3 class="font-sans text-xl lg:text-2xl font-semibold mb-3 text-white">A verdadeira autonomia</h3>
-                            <p class="font-sans font-light text-[15px] lg:text-base text-gray-300 leading-relaxed">
-                                A verdadeira autonomia do profissional que atua em HOF não vem de protocolos e sim da
-                                capacidade de enxergar a face de forma tridimensional. No Anatomy Master Face, estarei ao seu lado
-                                guiando você nessa jornada para elevar seu padrão clínico, sem mistérios e com a precisão
-                                que a anatomia nos proporciona.
+                            <p class="font-sans font-medium text-lg lg:text-xl text-gray-300 leading-relaxed">
+                                "Minha missão não é te entregar mais um mapa de injeção decorado. É construir com você a
+                                capacidade de enxergar a face de forma tridimensional. Na mentoria AMF, estarei ao seu lado
+                                para refinar seu olhar, lapidar suas técnicas e te dar a confiança de quem domina a anatomia
+                                em sua essência."
                             </p>
                         </div>
                     </div>
@@ -475,76 +443,60 @@
         </div>
     </section>
 
-    <section class="bg-[#F9F9F9] py-20 lg:py-24 border-y border-gray-200">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-                <!-- Title & Text -->
-                <div class="fade-in">
-                    <h2 class="font-sans text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                        Ao entrar para o Anatomy Master Face, você vai ter:
-                    </h2>
-                    <p class="text-gray-600 text-lg lg:text-xl font-light leading-relaxed">
-                        Uma experiência de estudo pensada para assistir no seu ritmo, consultar depois e aplicar com mais clareza na prática clínica.
+    <section class="bg-secondary py-24">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <div class="fade-in max-w-3xl mx-auto mb-16">
+                <h2 class="font-sans text-3xl lg:text-4xl font-medium mb-4">A Experiência Anatomy Master Face</h2>
+                <p class="text-textmuted text-lg font-light">
+                    Muito além de um curso básico. Um acompanhamento desenhado para a excelência.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-primary border border-gray-800 rounded-xl p-8 text-left hover:border-gold/50 transition-colors duration-300 group fade-in">
+                    <div
+                        class="w-14 h-14 bg-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="compass"
+                            class="w-7 h-7 text-gold group-hover:text-black transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Acompanhamento Direcionado</h3>
+                    <p class="text-textmuted font-light text-sm leading-relaxed">
+                        Você não estará sozinho. Receba direcionamento estratégico e análise de casos clínicos
+                        complexos.
                     </p>
                 </div>
-                <!-- Checklist -->
-                <div class="fade-in flex flex-col justify-center">
-                    <ul class="space-y-4 text-gray-700 font-medium text-lg">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-[#BE8C56] mr-4 flex-shrink-0 fill-[#BE8C56] text-white mt-1"></i>
-                            <span>Masterclass mensais exclusivas para membros AMF</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-[#BE8C56] mr-4 flex-shrink-0 fill-[#BE8C56] text-white mt-1"></i>
-                            <span>R$1000,00 de desconto em mentoria AMF LAB</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-[#BE8C56] mr-4 flex-shrink-0 fill-[#BE8C56] text-white mt-1"></i>
-                            <span>Membros classificados no Top 3 terão acesso a um dia de prática clínica pessoalmente com Dr. Luccas Lenine</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-[#BE8C56] mr-4 flex-shrink-0 fill-[#BE8C56] text-white mt-1"></i>
-                            <span>Membros classificados no Top 5 poderão atuar como monitores em cursos presenciais</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-[#BE8C56] mr-4 flex-shrink-0 fill-[#BE8C56] text-white mt-1"></i>
-                            <span>Comunidade exclusiva AMF, discussões de casos clínicos e contato direto com Dr Luccas Lenine</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Modules Carousel -->
-            <div class="relative fade-in">
-                <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory">
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./2.png" alt="Módulo" class="w-full h-auto object-cover">
+                <!-- Card 2 -->
+                <div class="bg-primary border border-gray-800 rounded-xl p-8 text-left hover:border-gold/50 transition-colors duration-300 group fade-in"
+                    style="transition-delay: 150ms;">
+                    <div
+                        class="w-14 h-14 bg-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="box"
+                            class="w-7 h-7 text-gold group-hover:text-black transition-colors duration-300"></i>
                     </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./3.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./4.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./5.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./6.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./7.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="snap-start flex-shrink-0 w-80 lg:w-96 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-200">
-                        <img src="./8.png" alt="Módulo" class="w-full h-auto object-cover">
-                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Raciocínio Tridimensional</h3>
+                    <p class="text-textmuted font-light text-sm leading-relaxed">
+                        Discussões aprofundadas sobre intercorrências e a dissecção do raciocínio por trás de resultados
+                        de alto padrão.
+                    </p>
                 </div>
-            </div>
 
-            <div class="mt-12 flex justify-center fade-in">
-                <a href="https://pay.hotmart.com/H106370647K" class="inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 px-12 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-lg text-center">
-                    Quero me inscrever
-                </a>
+                <!-- Card 3 -->
+                <div class="bg-primary border border-gray-800 rounded-xl p-8 text-left hover:border-gold/50 transition-colors duration-300 group fade-in"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="w-14 h-14 bg-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="users"
+                            class="w-7 h-7 text-gold group-hover:text-black transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Networking de Elite</h3>
+                    <p class="text-textmuted font-light text-sm leading-relaxed">
+                        Sente-se à mesa com profissionais que compartilham do mesmo nível de exigência e ambição que
+                        você.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -558,17 +510,27 @@
                 O impacto real do domínio anatômico na segurança e nos resultados do dia a dia.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- Testimonial 1 -->
-                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg">
-                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
+                <div
+                    class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg">
+                    <i data-lucide="quote"
+                        class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
                     <div class="flex items-center space-x-4 mb-8">
+                        <div
+                            class="w-14 h-14 rounded-full border border-gold/60 overflow-hidden shadow-inner flex-shrink-0">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dra. Carolina M." class="w-full h-full object-cover">
+                        </div>
                         <div>
-                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Natália Caroline</h4>
+                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Carolina M.</h4>
+                            <p class="text-gold text-[10px] uppercase tracking-widest mt-1 opacity-90">CIRURGIÃ DENTISTA
+                            </p>
                         </div>
                     </div>
                     <p class="text-[#F2F2F2] font-light text-[15px] italic leading-relaxed mb-8">
-                        “Foi uma experiência extremamente enriquecedora, com destaque para a dissecação em cadáver fresh frozen e a aplicação prática dos produtos, que proporcionaram um aprendizado realista e detalhado da anatomia facial.”
+                        "Eu tinha um pavor silencioso de preencher fossa piriforme e têmporas, mesmo após vários cursos.
+                        A mentoria me deu uma visão de 'raio-x'. Hoje eu sei exatamente onde a ponta da minha cânula
+                        está. Minha segurança em consultório é outra."
                     </p>
                     <div class="flex space-x-1.5">
                         <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
@@ -580,15 +542,25 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg" style="transition-delay: 150ms;">
-                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
+                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg"
+                    style="transition-delay: 150ms;">
+                    <i data-lucide="quote"
+                        class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
                     <div class="flex items-center space-x-4 mb-8">
+                        <div
+                            class="w-14 h-14 rounded-full border border-gold/60 overflow-hidden shadow-inner flex-shrink-0">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Roberto V." class="w-full h-full object-cover">
+                        </div>
                         <div>
-                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Lilian Giannoccaro</h4>
+                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dr. Roberto V.</h4>
+                            <p class="text-gold text-[10px] uppercase tracking-widest mt-1 opacity-90">MÉDICO
+                                DERMATOLOGISTA</p>
                         </div>
                     </div>
                     <p class="text-[#F2F2F2] font-light text-[15px] italic leading-relaxed mb-8">
-                        “Pontualidade, qualidade e comprometimento foram as marcas registradas deste curso, que entregou exatamente o que prometeu e muito mais. A saúde estética vai muito além da superficialidade; é uma arte que exige profundidade de conhecimento. Aprendi que, para ser excelente, é imprescindível cercar-se dos melhores. Agradeço especialmente o Dr. Luccas Lenine por proporcionar uma experiência tão enriquecedora! SOU DO TIME DE PROFISSIONAIS QUE ENXERGAM ALÉM DO QUE VEEM!”
+                        "Cursos tradicionais te entregam mapas mentais que não funcionam em todos os rostos. O Luccas me
+                        ensinou a pensar a face em 3D. Abandonei os protocolos engessados e passei a entregar uma
+                        naturalidade que dobrou o valor dos meus procedimentos."
                     </p>
                     <div class="flex space-x-1.5">
                         <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
@@ -600,35 +572,25 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg">
-                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
+                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg"
+                    style="transition-delay: 300ms;">
+                    <i data-lucide="quote"
+                        class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
                     <div class="flex items-center space-x-4 mb-8">
+                        <div
+                            class="w-14 h-14 rounded-full border border-gold/60 overflow-hidden shadow-inner flex-shrink-0">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dra. Amanda S." class="w-full h-full object-cover">
+                        </div>
                         <div>
-                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Raquel Quintanilha</h4>
+                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Amanda S.</h4>
+                            <p class="text-gold text-[10px] uppercase tracking-widest mt-1 opacity-90">ESPECIALISTA EM
+                                HOF</p>
                         </div>
                     </div>
                     <p class="text-[#F2F2F2] font-light text-[15px] italic leading-relaxed mb-8">
-                        “Luccas Lenine sua entrega ao compartilhar o conhecimento, sua presença cuidadosa ao conduzir cada etapa do nosso aprendizado e seu compromisso inabalável toda e qualquer dúvida que tivemos, foram, para mim, verdadeiras manifestações de excelência pedagógica...foi uma experiência transformadora, que superou minhas expectativas e reafirmou minha paixão pela ANATOMIA, pela dissecação e por continuar a ensinar o manejo de intercorrências.”
-                    </p>
-                    <div class="flex space-x-1.5">
-                        <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4 -->
-                <div class="bg-secondary/30 border border-gray-800/80 rounded-xl p-8 relative hover:border-gold/30 transition-colors duration-300 shadow-lg" style="transition-delay: 150ms;">
-                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-gold/10 fill-current opacity-50"></i>
-                    <div class="flex items-center space-x-4 mb-8">
-                        <div>
-                            <h4 class="font-semibold text-lg leading-tight text-gray-100">Dra. Katia Scapini</h4>
-                        </div>
-                    </div>
-                    <p class="text-[#F2F2F2] font-light text-[15px] italic leading-relaxed mb-8">
-                        “...muito feliz por ter conseguido dissecar a artéria facial e todos os seus ramos! Obrigada Luccas Lenine pela oportunidade! Tenho certeza que daqui para frente o meu olhar para HOF será diferenciado”
+                        "A profundidade das discussões de intercorrências e plano de aplicação é absurda. Estar em uma
+                        mesa com profissionais de alto nível e com um mentor que domina tanto a anatomia mudou o jogo da
+                        minha clínica. O nível de exigência subiu."
                     </p>
                     <div class="flex space-x-1.5">
                         <i data-lucide="star" class="w-4 h-4 text-gold fill-current"></i>
@@ -641,9 +603,11 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="https://pay.hotmart.com/H106370647K"
-                    class="inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-center text-base sm:text-lg">
-                    Quero alcançar esse nível de segurança
+                <a href="#application-form"
+                    class="inline-flex items-center text-gold text-sm font-semibold uppercase tracking-widest hover:text-gold-hover transition-colors group">
+                    QUERO ALCANÇAR ESSE NÍVEL DE SEGURANÇA
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
         </div>
@@ -655,69 +619,28 @@
             class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gold/5 rounded-full blur-[100px] pointer-events-none">
         </div>
 
-        <section class="bg-[#F9F9F9] py-24">
-        <div class="container mx-auto px-6 lg:px-12 text-center fade-in">
-            <h2 class="font-sans text-3xl lg:text-4xl font-medium mb-8 text-gray-900">Para quem é o AMF?</h2>
+        <div class="container mx-auto px-6 lg:px-12 text-center relative z-10 fade-in">
+            <h2 class="font-sans text-3xl lg:text-4xl font-medium mb-8">Para quem é a Mentoria AMF?</h2>
 
             <div
-                class="max-w-3xl mx-auto bg-white border border-gray-200 shadow-xl rounded-2xl p-8 lg:p-12">
-                <p class="text-gray-700 text-lg font-light leading-relaxed mb-10">
-                    Este ambiente <strong class="text-gray-900 font-medium">não é para iniciantes buscando o
-                        básico</strong>. O AMF foi desenhado para profissionais que já atuam na Harmonização
-                    Orofacial, que possuem conhecimento de base, mas que buscam a previsibilidade e a confiança que
-                    só o entendimento tridimensional da anatomia pode proporcionar. Se você quer parar de replicar
-                    mapas prontos e deseja pensar o procedimento em sua totalidade, este é o seu lugar.
+                class="max-w-3xl mx-auto bg-secondary/50 border border-gray-800 rounded-2xl p-8 lg:p-12 backdrop-blur-sm">
+                <p class="text-gray-300 text-lg font-light leading-relaxed mb-10">
+                    Este ambiente <strong class="text-white font-medium">não é para iniciantes buscando o
+                        básico</strong>. A Mentoria AMF foi desenhada para profissionais que já atuam na Harmonização
+                    Facial, mas sentem que estagnaram nos protocolos padrões. É para <span
+                        class="text-gold font-medium">médicos, dentistas e profissionais da estética avançada</span> que
+                    buscam o refinamento e a previsibilidade.
                 </p>
 
-                <a href="https://pay.hotmart.com/H106370647K"
-                    class="inline-block bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-semibold uppercase tracking-wider py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)]">
-                    Quero me inscrever
+                <a href="#application-form"
+                    class="inline-block bg-gold hover:bg-gold-hover text-black font-semibold uppercase tracking-wider py-4 px-10 rounded-md transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)]">
+                    Aplicar para a Mentoria
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Nova Seção: Preço e Oferta -->
-    <section class="bg-black py-20 lg:py-24 border-t border-gray-900">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="text-center mb-12 fade-in">
-                <h2 class="font-sans text-3xl lg:text-4xl xl:text-5xl font-medium mb-4 text-white max-w-4xl mx-auto leading-tight">
-                    Tudo isso por um investimento que se paga em um único procedimento
-                </h2>
-                <p class="text-gray-400 text-sm lg:text-base font-light tracking-wide">
-                    Acesso imediato &bull; 1 ano de curso
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl max-w-5xl mx-auto overflow-hidden shadow-2xl fade-in">
-                <div class="grid grid-cols-1 md:grid-cols-2 items-center">
-                    <!-- Esquerda: Preço -->
-                    <div class="p-8 lg:p-12 xl:p-16 flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-200 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Anatomy Master Face</h3>
-                        <p class="text-gray-500 font-medium mb-6">Por apenas:</p>
-                        
-                        <div class="flex items-baseline justify-center md:justify-start text-[#BE8C56] mb-2 font-bold">
-                            <span class="text-3xl lg:text-4xl mr-2">12x</span>
-                            <span class="text-6xl lg:text-7xl">99</span>
-                            <span class="text-3xl lg:text-4xl">,90</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-8 font-medium">ou R$ 1.198,80 à vista</p>
-
-                        <a href="https://pay.hotmart.com/H106370647K" class="w-full inline-flex items-center justify-center bg-[#BE8C56] hover:bg-[#a67a4a] text-white font-bold uppercase tracking-wider py-5 px-8 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(190,140,86,0.3)] hover:shadow-[0_0_25px_rgba(190,140,86,0.5)] text-lg lg:text-xl text-center">
-                            Quero garantir minha condição especial
-                        </a>
-                    </div>
-
-                    <!-- Direita: Imagem -->
-                    <div class="p-8 lg:p-12 flex justify-center items-center bg-[#F9F9F9]">
-                        <img src="./mockup-dispositivos.png" alt="Anatomy Master Face nos Dispositivos" class="w-full h-auto max-w-md transform hover:scale-105 transition-transform duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-secondary py-24 border-t border-gray-900">
+    <section class="bg-secondary py-24">
         <div class="container mx-auto px-6 lg:px-12 max-w-4xl fade-in">
             <h2 class="font-sans text-3xl font-medium mb-12 text-center">Perguntas Frequentes</h2>
 
@@ -854,9 +777,9 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="http://wa.me/11956509633" target="_blank" rel="noopener noreferrer"
+    <a href="https://chat.whatsapp.com/LdTPCRoSCizIwGU6PPVL1F" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full pulse-btn hover:bg-[#20bd5a] transition-colors duration-300 flex items-center justify-center group"
-        aria-label="Falar no WhatsApp">
+        aria-label="Entrar no Grupo do WhatsApp">
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -865,7 +788,7 @@
         <!-- Tooltip -->
         <span
             class="absolute right-full mr-4 bg-gray-900 text-white text-xs whitespace-nowrap px-3 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Entrar para o AMF
+            Entrar para a Mentoria
         </span>
     </a>
 
@@ -890,6 +813,58 @@
             answer.classList.toggle('open');
             chevron.classList.toggle('rotated');
         }
+
+        // WhatsApp Mask Logic
+        document.getElementById('whatsapp').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        // Form Submission Logic
+        document.getElementById('lead-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = this;
+            const btn = document.getElementById('submit-btn');
+            const btnText = btn.querySelector('span');
+            const successMsg = document.getElementById('form-success-msg');
+            const errorMsg = document.getElementById('form-error-msg');
+
+            // Reset messages
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // State: Loading
+            btn.disabled = true;
+            btnText.textContent = 'Enviando...';
+            form.style.opacity = '0.7';
+
+            const formData = new FormData(form);
+            const data = new URLSearchParams(formData);
+
+            fetch('https://script.google.com/macros/s/AKfycbxKIuhn_3xsiLTw-IWuC47pRFf2q0maDpZBfv5nOtlLtPXb4vm2vXHs8-PT5aZ7JrNg/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: data
+            })
+                .then(response => {
+                    form.style.opacity = '1';
+                    btn.disabled = false;
+                    btnText.textContent = 'Enviar minha aplicação';
+                    form.reset();
+                    form.style.display = 'none';
+                    successMsg.classList.remove('hidden');
+                    successMsg.classList.add('flex');
+                    lucide.createIcons();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    form.style.opacity = '1';
+                    btn.disabled = false;
+                    btnText.textContent = 'Enviar minha aplicação';
+                    errorMsg.classList.remove('hidden');
+                });
+        });
 
         // Video Player Logic
         function playVideo() {
